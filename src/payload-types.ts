@@ -8,7 +8,7 @@
 
 export interface Config {
   collections: {
-    user: User;
+    users: User;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -31,7 +31,7 @@ export interface User {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: 'user';
+    relationTo: 'users';
     value: string | User;
   };
   key?: string | null;

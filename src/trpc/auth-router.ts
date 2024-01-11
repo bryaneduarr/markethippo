@@ -14,7 +14,7 @@ export const authRouter = router({
 
       // Check if user already exists
       const { docs: users } = await payload.find({
-        collection: "user",
+        collection: "users",
         where: {
           email: {
             equals: email,
@@ -29,7 +29,7 @@ export const authRouter = router({
       }
 
       await payload.create({
-        collection: "user",
+        collection: "users",
         data: {
           email,
           password,
@@ -48,7 +48,7 @@ export const authRouter = router({
       const payload = await getPayloadClient();
 
       const isVerified = await payload.verifyEmail({
-        collection: "user",
+        collection: "users",
         token,
       });
 
@@ -69,7 +69,7 @@ export const authRouter = router({
       const payload = await getPayloadClient();
       try {
         await payload.login({
-          collection: "user",
+          collection: "users",
           data: {
             email,
             password,
