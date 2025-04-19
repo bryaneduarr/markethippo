@@ -8,6 +8,7 @@ import { PRODUCT_CATEGORIES } from "@/config";
 import { formatPrice } from "@/lib/utils";
 import Link from "next/link";
 import PaymentStatus from "@/components/PaymentStatus";
+import thankYouPayment from "../../../public/checkout-thank-you.jpg";
 
 interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -33,7 +34,6 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
   const [order] = orders;
 
   if (!order) return notFound();
-
   const orderUserId =
     typeof order.user === "string" ? order.user : order.user.id;
 
@@ -52,7 +52,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
       <div className="hidden lg:block h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12">
         <Image
           fill
-          src="/checkout-thank-you.jpg"
+          src={thankYouPayment}
           className="h-full w-full object-cover object-center"
           alt="thank you for your order"
         />
