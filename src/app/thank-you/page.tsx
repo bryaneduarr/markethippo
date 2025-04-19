@@ -70,7 +70,7 @@ const ThankYouPage = async ({ searchParams }: PageProps) => {
               <p className="mt-2 text-base text-muted-foreground">
                 Your order was processed and your assets are available to
                 download below. We&apos;ve sent your receipt and order details
-                to
+                to{" "}
                 {typeof order.user !== "string" ? (
                   <span className="font-medium text-gray-900">
                     {order.user.email}

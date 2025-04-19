@@ -54,7 +54,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@joshtriedcoding",
+      creator: "@befrba",
     },
     icons,
     metadataBase: new URL("https://markethippo-production.up.railway.app"),
